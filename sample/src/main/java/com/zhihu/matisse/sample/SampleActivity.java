@@ -84,8 +84,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.zhihu:
                 Matisse.from(SampleActivity.this)
                         .choose(MimeType.ofImage(), false)
-                        .countable(true)
-                        .capture(true)
+
                         .captureStrategy(
                                 new CaptureStrategy(true, "com.zhihu.matisse.sample.fileprovider", "test"))
                         .maxSelectable(9)
@@ -94,7 +93,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                 getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
                         .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
                         .thumbnailScale(0.85f)
-                        .imageEngine(new GlideEngine())
+                        .imageEngine(new GlideWebviewSubEngine())
                         .setOnSelectedListener((uriList, pathList) -> {
                             Log.e("onSelected", "onSelected: pathList=" + pathList);
                         })

@@ -33,7 +33,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="@dimen/item_margin_horizontal"
             android:minHeight="56dp"
-            android:text="Zhihu"
+            android:text="测试"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:theme="@style/ZhihuOverlay" />
@@ -48,6 +48,7 @@
             android:minHeight="56dp"
             android:text="Dracula"
             android:textAllCaps="false"
+            android:visibility="gone"
             android:textColor="@android:color/white"
             android:theme="@style/DraculaOverlay" />
 
@@ -62,6 +63,7 @@
             android:minHeight="56dp"
             android:text="OnlyGif"
             android:textAllCaps="false"
+            android:visibility="gone"
             android:textColor="@android:color/white"
             android:theme="@style/ZhihuOverlay" />
 

@@ -116,7 +116,15 @@ public class AlbumLoader extends CursorLoader {
     }
     // =============================================
 
-    private static final String BUCKET_ORDER_BY = "datetaken DESC";
+//    private static final String BUCKET_ORDER_BY = "datetaken DESC";
+
+//    private static final String BUCKET_ORDER_BY =  MediaStore.Images.Media.DATE_MODIFIED + " DESC";
+
+    public static final String BUCKET_ORDER_BY =
+            "case ifnull(" + MediaStore.Images.Media.DATE_TAKEN + ",0)" +
+                    " when 0 then " + MediaStore.Images.Media.DATE_MODIFIED + "*1000" +
+                    " else " + MediaStore.Images.Media.DATE_TAKEN +
+                    " end" + " DESC , " + MediaStore.Images.ImageColumns._ID + " DESC";
 
     private AlbumLoader(Context context, String selection, String[] selectionArgs) {
         super(
